@@ -6,8 +6,12 @@
     "express": "^5.1.0",
     "prisma": "^6.6.0"
   },
+  "engines": {
+    "node": ">=18.18"
+  },
   "scripts": {
-    "postinstall": "prisma generate",
+    "postinstall": "prisma generate --schema=./prisma/schema.prisma && ls -la node_modules/@prisma",
+    "build": "prisma generate --schema=./prisma/schema.prisma",
     "start": "node src/server.js"
   }
 }
